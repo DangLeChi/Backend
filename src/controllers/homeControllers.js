@@ -1,4 +1,6 @@
 const getHomePage = (req, res) => {
+    // process data
+    // call model
     res.send ('Hellp World vs Hoi Dan IT')
 
 }
