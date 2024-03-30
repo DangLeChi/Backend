@@ -10,6 +10,10 @@ const app = express()
 const port =process.env.PORT || 8888;
 const hostname = process.env.HOSTNAME
 
+// config req.body
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 configViewEngine(app)
 
 app.use('/', webRoutes)

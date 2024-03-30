@@ -13,8 +13,14 @@ const hoidanit = (req, res) => {
     // res.send('<h1> Dang Thi Le Chi <h1>')
     res.render('sample.ejs')
   }
+
+const postCreateUser = (req, res) => {
+    console.log(">>> req.body", req.body)
+    res.send('create a new user')
+}
 module.exports = {
     getHomePage,
     getABC,
-    hoidanit
+    hoidanit,
+    postCreateUser,
 }
