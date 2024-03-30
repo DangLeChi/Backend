@@ -12,7 +12,7 @@ const hostname = process.env.HOSTNAME
 
 configViewEngine(app)
 
-app.use('/test', webRoutes)
+app.use('/', webRoutes)
 // config template engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -32,7 +32,6 @@ app.get('/hoidanit', (req, res) => {
   res.render('sample.ejs')
 })
 
-
 // test connectiôn
 // A simple SELECT query
 connection.query(
@@ -42,7 +41,6 @@ connection.query(
     
   }
 );
-
 
 app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`)
