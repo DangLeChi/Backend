@@ -38,13 +38,13 @@ app.get('/hoidanit', (req, res) => {
 
 // test connectiôn
 // A simple SELECT query
-connection.query(
-  'SELECT * from Users u',
-  function (err, results, fields) {
-    console.log(">>> result ",results); // results contains rows returned by server
+// connection.query(
+//   'SELECT * from Users u',
+//   function (err, results, fields) {
+//     console.log(">>> result ",results); // results contains rows returned by server
     
-  }
-);
+//   }
+// );
 
 app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`)

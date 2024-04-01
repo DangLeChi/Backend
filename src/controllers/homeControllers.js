@@ -14,27 +14,39 @@ const hoidanit = (req, res) => {
     res.render('sample.ejs')
   }
 
-const postCreateUser = (req, res) => {
+const postCreateUser = async(req, res) => {
     console.log(">>> req.body", req.body)
     let email = req.body.email
     let name = req.body.name
     let city = req.body.city
 
-    console.log(">>> email", email,'name =', name,"city = ", city)
+    // console.log(">>> email", email,'name =', name,"city = ", city)
 
     // let {email, name, city} = req.body
 
     // Using placeholders
-    connection.query(
+
+
+    // connection.query(
+    //     'SELECT * from Users u',
+    //     function (err, results, fields) {
+    //       console.log(">>> result ",results); // results contains rows returned by server
+          
+    //     }
+    // )
+    let [results, fields] = await     connection.query(
         `INSERT INTO
         Users (email,name,city)
         VALUES (?,?,?)`,
         [email, name, city],
-        function (err, results) {
-        console.log(results);
-        res.send ('Create user succeed!')
-        }
+
+        
     );
+    console.log (">>> check results: ", results)
+    res.send('Create user succeed')
+    // const [results, fields] = await connection.query(
+    //     'SELECT * from Users u')
+    // console.log('>>> result ',results)
 
 }
 

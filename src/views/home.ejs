@@ -5,39 +5,72 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+<style>
+    .title {
+        font-size: 25px;
+        font-weight: 600 ;
+        padding-bottom: 10px;
+    }
+    .table-container {
+        padding : 15px 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color: rgb(189, 240, 186);}
+    </style>
 <body>
     <div class="topnav">
         <a class="active" href="/">Home</a>
         <a href="/create">Create User </a>
 
       </div>
+      <div class = 'table-container'>
+        <div class = 'title'>List Users</div>
 
-      <!-- <div class="form-add-new ">
+        <table>
+            <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>City</th>
+            </tr>
+            <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+            <td>$100</td>
 
-        <form action="/create-user" method = 'post'> 
-            <fieldset>
-                <legend>Add new users </legend>
-        
-                <div class="input-group">
-                    <label> Email: </label>
-                    <input type="text" name="email" >
-                </div>
+            </tr>
+            <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+            <td>$150</td>
 
-                <div class="input-group">
-                    <label> Name: </label>
-                    <input type="text" name="name">
-                </div>
+            </tr>
+            <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+            <td>$300</td>
 
-                <div class="input-group">
-                    <label> City: </label>
-                    <input type="text" name="city">
-                </div>
-                <div>
-                    <button>Save</button>
-                </div>
-            </fieldset>
+            </tr>
+            <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+            <td>$250</td>
 
-        </form>
-      </div> -->
+            </tr>
+        </table>
 </body>
 </html>
