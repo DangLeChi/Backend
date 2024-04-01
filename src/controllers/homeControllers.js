@@ -37,9 +37,14 @@ const postCreateUser = (req, res) => {
     );
 
 }
+
+const getCreatePage= (req, res) => {
+    res.render('create.ejs')
+}
 module.exports = {
     getHomePage,
     getABC,
     hoidanit,
     postCreateUser,
+    getCreatePage
 }
