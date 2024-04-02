@@ -15,7 +15,7 @@
 
       </div>
       <div class = 'table-container'>
-        <%= JSON.stringify(listUsers)%>
+        <!-- <%= JSON.stringify(listUsers)%> -->
         <div class = 'title'>List Users</div>
 
         <table>
@@ -26,39 +26,51 @@
             <th>City</th>
             <th>Action</th>
             </tr>
-            <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>$100</td>
-            <td>$100</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
+            
+            <!-- <% for (let i = 0; i < listUsers.length; i++) { %>
+                <tr>
+                    <td>
+                        <%=listUsers[i].id %>
+                    </td>
+                    <td>
+                        <%=listUsers[i].email %>
+                    </td>
+                    <td>
+                        <%=listUsers[i].name %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].city%>
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                    <tr>
+            <% } %> -->
 
-            </td>
+            <% listUsers.forEach(function(users) { %>
+                <tr>
+                    <td>
+                        <%=users.id %>
+                    </td>
+                    <td>
+                        <%=users.email %>
+                    </td>
+                    <td>
+                        <%=users.name %>
+                    </td>
+                    <td>
+                        <%= users.city%>
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                    <tr>
+             <% }); %> 
+            
 
-            </tr>
-            <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>$150</td>
-            <td>$150</td>
-
-            </tr>
-            <tr>
-            <td>Joe</td>
-            <td>Swanson</td>
-            <td>$300</td>
-            <td>$300</td>
-
-            </tr>
-            <tr>
-            <td>Cleveland</td>
-            <td>Brown</td>
-            <td>$250</td>
-            <td>$250</td>
-
-            </tr>
+            
         </table>
 </body>
 </html>
