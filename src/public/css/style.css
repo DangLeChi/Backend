@@ -71,3 +71,7 @@ th, td {
 }
 
 tr:hover {background-color: rgb(189, 240, 186);}
+
+.d-none {
+  display: none;
+}

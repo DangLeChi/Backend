@@ -1,5 +1,5 @@
 const connection = require ('../config/database')
-const {getAllUsers, getUserByID} = require('../services/CRUDService')
+const {getAllUsers, getUserByID, updateUserById} = require('../services/CRUDService')
 
 
 const getHomePage = async (req, res) => {
@@ -68,6 +68,41 @@ const getUpdatePage = async (req, res) => {
     
 }
 
+const postUpdateUser = async(req, res) => {
+    // console.log(">>> req.body", req.body)
+    let email = req.body.email
+    let name = req.body.name
+    let city = req.body.city
+    let userID = req.body.userID
+    console.log(">>> email: ",email, "name: ",name, "city: ",city, "user id: ",userID)
+
+
+    // console.log(">>> email", email,'name =', name,"city = ", city)
+
+    // let {email, name, city} = req.body
+
+    // Using placeholders
+
+
+    // connection.query(
+    //     'SELECT * from Users u',
+    //     function (err, results, fields) {
+    //       console.log(">>> result ",results); // results contains rows returned by server
+          
+    //     }
+    // )
+    
+    await updateUserById(email, name, city, userID)
+    // );
+    // console.log (">>> check results: ", results)
+    // res.send('Update user succeed')
+    res.redirect('/');
+    // const [results, fields] = await connection.query(
+    //     'SELECT * from Users u')
+    // console.log('>>> result ',results)
+
+}
+
 
 module.exports = {
     getHomePage,
@@ -75,5 +110,6 @@ module.exports = {
     hoidanit,
     postCreateUser,
     getCreatePage,
-    getUpdatePage
+    getUpdatePage,
+    postUpdateUser
 }
